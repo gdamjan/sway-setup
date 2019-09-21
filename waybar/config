@@ -1,0 +1,96 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 24,
+    "modules-left": ["sway/workspaces", "idle_inhibitor", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": [ "pulseaudio", "backlight", "network", "cpu", "memory", "battery#bat0", "battery#bat1",
+                       "tray", "custom/layout", "clock" ],
+    "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "format": "{index} {name}"
+    },
+    "sway/mode": {
+        "format": "{}"
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "{:%A\n%d %B %Y\n%H:%M}",
+        "format": "{:%a %d %b %H:%M}",
+        "format-alt": "{:%H:%M}"
+    },
+    "cpu": {
+        "format": "{usage:2}% "
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "battery#bat0": {
+        "bat": "BAT0",
+        "name": "BAT0",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat1": {
+        "bat": "BAT1",
+        "name": "BAT1",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "interval": 1,
+        "max-width": 50,
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "format-ethernet": "{bandwidthUpBits} {bandwidthDownBits} ",
+        "format-disconnected": "⚠",
+        "tooltip-format-wifi": " {essid}: {frequency}Mhz ({signalStrength}%)\n{bandwidthUpBits}\n{bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "⚠ Disconnected"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+    "custom/layout": {
+      "exec": "~/.config/waybar/keyboard-layout.py",
+      "return-type": "json",
+      "format": "<span font='Fira Mono'>{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    }
+}
