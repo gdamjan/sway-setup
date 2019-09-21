@@ -1,0 +1,28 @@
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Your preferred terminal emulator
+set $term konsole
+
+# Your preferred application launcher
+# Note: it's recommended that you pass the final command to sway
+#set $menu dmenu_path | dmenu | xargs swaymsg exec
+#set $menu dmenu_path | dmenu | xargs systemd-run --user
+set $menu ~/src/wldash/target/release/wldash
+
+font DejaVu Sans 10
+workspace_layout tabbed
+focus_follows_mouse no
+
+include input
+include output
+include bindings
+include apps
+include /etc/sway/config.d/*
+
+exec "~/.config/sway/keyboard-layout-per-window.py"
+exec "systemctl --user import-environment ; systemctl --user start sway-session.target"

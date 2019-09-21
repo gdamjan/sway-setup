@@ -1,0 +1,4 @@
+input 1:1:AT_Translated_Set_2_keyboard {
+  xkb_layout us,mk
+  xkb_options grp:switch,grp:caps_toggle
+}
