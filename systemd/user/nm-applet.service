@@ -1,0 +1,13 @@
+[Unit]
+Description=network monitor and control GUI applet
+Documentation=man:nm-applet(1)
+PartOf=wayland-session.target
+
+# requires nm-applet compiled with -D appindicator=yes
+[Service]
+Type=dbus
+BusName=org.freedesktop.network-manager-applet
+ExecStart=/usr/bin/nm-applet --indicator
+
+[Install]
+WantedBy=wayland-session.target
