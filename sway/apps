@@ -45,6 +45,10 @@ for_window [app_id="org.kde.kruler"] {
   border normal 1
   floating enable
 }
+for_window [app_id="desktopclient.nextcloud.com.nextcloud"] {
+  border normal 1
+  floating enable
+}
 
 for_window [app_id="avizo-service"] border pixel 0
 for_window [app_id="avizo-service"] sticky toggle
