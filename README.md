@@ -52,7 +52,7 @@ Both require `i3ipc`, install it with: `pip install --user i3ipc`.
 # An unordered list of wayland bugs and issues
 
 - all firefox issues https://bugzilla.mozilla.org/show_bug.cgi?id=635134
-- copy by select / paste with middle click in QT/KDE apps
+- ~copy by select / paste with middle click in QT/KDE apps~
   (need to implement [gtk_primary_selection_device_manager](https://bugreports.qt.io/browse/QTBUG-66008)) (qt-5.14)
 - ~ctrl-Ц/В doesn't copy/paste in QT/KDE~ https://bugreports.qt.io/browse/QTBUG-65503 (fixed qt-5.13)
 - ~utf-8 paste~ https://bugreports.qt.io/browse/QTBUG-54786 (fixed qt-5.13)
