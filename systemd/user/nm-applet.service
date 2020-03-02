@@ -2,6 +2,7 @@
 Description=network monitor and control GUI applet
 Documentation=man:nm-applet(1)
 PartOf=wayland-session.target
+After=wayland-session.target
 
 # requires nm-applet compiled with -D appindicator=yes
 [Service]
