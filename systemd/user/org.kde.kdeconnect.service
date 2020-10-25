@@ -1,5 +1,7 @@
 [Unit]
 Description=Adds communication between KDE and your smartphone
+After=graphical-session.target
+PartOf=graphical-session.target
 
 [Service]
 Type=dbus
@@ -7,4 +9,4 @@ BusName=org.kde.kdeconnect
 ExecStart=/usr/lib/kdeconnectd
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target
