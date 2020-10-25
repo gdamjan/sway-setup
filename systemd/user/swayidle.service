@@ -1,17 +1,13 @@
 [Unit]
 Description=Idle manager for Wayland
 Documentation=man:swayidle(1)
+Documentation=https://github.com/gdamjan/swayidle - fork with sd-notify and autolock
 PartOf=graphical-session.target
 After=sway-session.target
 
 [Service]
-Type=simple
-ExecStart=/usr/bin/swayidle -w \
-        timeout 300 'swaylock -f' \
-        timeout 600 'swaymsg "output * dpms off"' \
-             resume 'swaymsg "output * dpms on"' \
-        before-sleep 'swaylock -f' \
-        after-resume 'swaymsg "output * dpms on"'
+Type=notify
+ExecStart=/usr/bin/swayidle -w -l
 
 [Install]
 WantedBy=sway-session.target
