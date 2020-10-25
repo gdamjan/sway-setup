@@ -1,0 +1,10 @@
+[Unit]
+Description=Adds communication between KDE and your smartphone
+
+[Service]
+Type=dbus
+BusName=org.kde.kdeconnect
+ExecStart=/usr/lib/kdeconnectd
+
+[Install]
+WantedBy=default.target

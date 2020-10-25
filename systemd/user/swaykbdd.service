@@ -1,0 +1,11 @@
+[Unit]
+Description=Keyboard layout per window
+PartOf=graphical-session.target
+After=sway-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/swaykbdd
+
+[Install]
+WantedBy=sway-session.target

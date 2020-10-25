@@ -1,0 +1,10 @@
+[Unit]
+Description=SoulseekQt
+PartOf=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/soulseekqt
+
+[Install]
+WantedBy=graphical-session.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Firefox nightly
+PartOf=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=/opt/firefox/firefox
+
+[Install]
+WantedBy=graphical-session.target
