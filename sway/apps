@@ -25,7 +25,7 @@ for_window [app_id="org.kde.konsole"] {
 }
 
 for_window [app_id="com.github.communi.communi"] {
-  move container to workspace 2:irc
+  move container to workspace 3:irc
 }
 
 for_window [app_id="pinentry-qt"] {
@@ -48,6 +48,12 @@ for_window [app_id="org.kde.kruler"] {
 for_window [app_id="desktopclient.nextcloud.com.nextcloud"] {
   border normal 1
   floating enable
+}
+for_window [class="SoulseekQt"] {
+  move container to workspace 5:media
+}
+for_window [app_id="Alacritty"] {
+  move container to workspace 2:term
 }
 
 for_window [app_id="avizo-service"] border pixel 0
