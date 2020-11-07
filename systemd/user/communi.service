@@ -1,0 +1,10 @@
+[Unit]
+Description=communi - modern irc client
+PartOf=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/communi
+
+[Install]
+WantedBy=graphical-session.target
