@@ -73,3 +73,65 @@ Both require `i3ipc`, install it with: `pip install --user i3ipc`.
 - ~KDE/Qt apps style~ (works fine with XDG_CURRENT_DESKTOP=KDE)
 - systemd --user support in sway https://github.com/swaywm/sway/pull/3486
 - generic screen/window capture (chromecasting, webrtc screensharing, screencasting) - pipewire integration in firefox/chrome
+
+# ps: `systemd-cgls -u user.slice`
+
+```
+Unit user.slice (/user.slice):
+└─user-1000.slice 
+  ├─user@1000.service 
+  │ ├─dbus-broker.service 
+  │ │ ├─1043 /usr/bin/dbus-broker-launch --scope user
+  │ │ └─1044 dbus-broker --log 4 --controller 10 --machine-id dcf0d2b9b08f4fcf8…
+  │ ├─run-r142215d057bf43d3bceb5cd0158dd792.service 
+  │ │ ├─2290 /usr/bin/alacritty
+  │ │ └─2310 /bin/bash
+  │ ├─run-r93568e2d57e14e339b1b7f25e38b521c.service 
+  │ │ ├─2131 /usr/bin/alacritty
+  │ │ ├─2151 /bin/bash
+  │ │ └─6512 systemd-cgls -u user.slice
+  │ ├─swaykbdd.service 
+  │ │ └─1115 /usr/bin/swaykbdd
+  │ ├─run-r8d99f10d5f2e4bf58089b02b0a7791e8.service 
+  │ │ ├─2184 /usr/bin/alacritty
+  │ │ └─2204 /bin/bash
+  │ ├─mako.service 
+  │ │ └─1116 /usr/bin/mako
+  │ ├─firefox.service 
+  │ │ ├─1109 /opt/firefox/firefox
+  │ │ ├─1329 /opt/firefox/firefox-bin -contentproc -parentBuildID 2020110616042…
+  │ │ ├─1365 /opt/firefox/firefox-bin -contentproc -childID 1 -isForBrowser -pr…
+  │ │ ├─1446 /opt/firefox/firefox-bin -contentproc -childID 2 -isForBrowser -pr…
+  │ │ ├─1529 /opt/firefox/firefox-bin -contentproc -childID 3 -isForBrowser -pr…
+  │ │ ├─1549 /opt/firefox/firefox-bin -contentproc -childID 5 -isForBrowser -pr…
+  │ │ ├─1901 /opt/firefox/firefox-bin -contentproc -childID 6 -isForBrowser -pr…
+  │ │ └─1980 /opt/firefox/firefox-bin -contentproc -childID 7 -isForBrowser -pr…
+  │ ├─pulseaudio.service 
+  │ │ ├─1004 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+  │ │ └─1039 /usr/lib/pulse/gsettings-helper
+  │ ├─swayidle.service 
+  │ │ └─1113 /usr/bin/swayidle -w -l
+  │ ├─init.scope 
+  │ │ ├─878 /usr/lib/systemd/systemd --user
+  │ │ └─883 (sd-pam)
+  │ ├─run-r68c60c3012ca412e81cc474fbc32b2ad.service 
+  │ │ ├─2237 /usr/bin/alacritty
+  │ │ └─2257 /bin/bash
+  │ ├─sway.service 
+  │ │ ├─1045 /usr/bin/sway
+  │ │ ├─1098 swaybg -o * -i /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_192…
+  │ │ ├─1100 swaybar -b bar-0
+  │ │ ├─1120 Xwayland :1 -rootless -terminate -listen 21 -listen 23 -wm 47
+  │ │ └─1164 i3status-rs
+  │ ├─org.kde.kdeconnect.service 
+  │ │ ├─1112 /usr/lib/kdeconnectd
+  │ │ ├─2493 kdeinit5: Running...
+  │ │ ├─2494 /usr/lib/kf5/klauncher --fd=8
+  │ │ └─2496 tags.so [kdeinit5] tags local:/run/user/1000/klauncherRBMkrF.1.sla…
+  │ └─run-r652066f058184006ae1d462739e93b52.service 
+  │   └─2062 /usr/bin/communi
+  └─session-2.scope 
+    ├─1012 /usr/lib/sddm/sddm-helper --socket /tmp/sddm-authe3be91ee-741e-41f8-…
+    ├─1019 /usr/bin/kwalletd5 --pam-login 7 3
+    └─1021 systemctl --wait --user start sway.service
+```
