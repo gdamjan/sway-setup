@@ -1,3 +1,7 @@
+# when using 3istsatus-rs with swaybar
+# https://github.com/greshake/i3status-rust
+#
+
 theme = "solarized-dark"
 icons = "awesome5"
 
@@ -5,9 +9,29 @@ icons = "awesome5"
 block = "temperature"
 collapsed = false
 interval = 10
-format = "{min}° min, {max}° max, {average}° avg"
-#chip = "*-isa-*"
-#inputs = ["CPUTIN", "SYSTIN"]
+format = "gpu {max}°"
+chip = "amdgpu-pci-*"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+format = "cpu {max}°"
+chip = "k10temp-pci-*"
+
+[[block]]
+block = "temperature"
+collapsed = true
+interval = 10
+format = "nvme: {max}°"
+chip = "nvme-pci-*"
+
+[[block]]
+block = "temperature"
+collapsed = true
+interval = 10
+format = "wifi: {max}°"
+chip = "iwlwifi_1-*"
 
 [[block]]
 block = "net"
