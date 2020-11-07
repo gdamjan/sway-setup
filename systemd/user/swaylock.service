@@ -1,0 +1,8 @@
+[Unit]
+Description=swaylock - Screen locker for Wayland
+Documentation=man:swaylock(1)
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/swaylock -f
+Restart=on-failure

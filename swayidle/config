@@ -1,7 +1,8 @@
 # ~/.config/swayidle/config
-timeout 300 'swaylock -f'
-timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
-before-sleep 'swaylock -f'
-after-resume 'swaymsg "output * dpms on"'
+before-sleep 'systemctl --user start swaylock'
+lock 'systemctl --user start swaylock'
 unlock 'swaymsg "output * dpms on"'
-lock 'swaylock -f'
+after-resume 'swaymsg "output * dpms on"'
+timeout 300 'systemctl --user start swaylock'
+timeout 600 'swaymsg "output * dpms off"'
+resume 'swaymsg "output * dpms on"'
