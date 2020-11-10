@@ -6,3 +6,6 @@ Documentation=man:swaylock(1)
 Type=forking
 ExecStart=/usr/bin/swaylock -f
 Restart=on-failure
+
+[Install]
+WantedBy=sway-session.target
