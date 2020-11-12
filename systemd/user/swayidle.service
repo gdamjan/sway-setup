@@ -7,7 +7,7 @@ After=sway-session.target
 
 [Service]
 Type=notify
-ExecStart=/usr/bin/swayidle -w -l
+ExecStart=/usr/bin/swayidle -w
 
 [Install]
 WantedBy=sway-session.target
