@@ -43,12 +43,6 @@ I'm running sway as a user systemd service, started by sddm (the login manager).
 
 … and [more](https://github.com/topics/sway).
 
-## Also:
-
-I use two python scripts to: show the current keyboard layout in waybar (see `./waybar/keyboard-layout.py`); and
-`./sway/keyboard-layout-per-window.py` that implements per-window keyboard layout in sway.
-Both require `i3ipc`, install it with: `pip install --user i3ipc`.
-
 # An unordered list of wayland bugs and issues
 
 - all firefox issues https://bugzilla.mozilla.org/show_bug.cgi?id=635134
