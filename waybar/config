@@ -5,7 +5,7 @@
     "modules-left": ["sway/workspaces", "idle_inhibitor", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": [ "pulseaudio", "backlight", "network", "cpu", "memory", "battery#bat0", "battery#bat1",
-                       "tray", "custom/layout", "clock" ],
+                       "tray", "sway/language", "clock" ],
     "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
@@ -13,6 +13,10 @@
     },
     "sway/mode": {
         "format": "{}"
+    },
+    "sway/language": {
+        "format": "{}",
+        "max-length": 50
     },
     "tray": {
         // "icon-size": 21,
@@ -80,11 +84,6 @@
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
         "format-icons": ["", ""]
-    },
-    "custom/layout": {
-      "exec": "~/.config/waybar/keyboard-layout.py",
-      "return-type": "json",
-      "format": "<span font='Fira Mono'>{}</span>"
     },
     "idle_inhibitor": {
         "format": "{icon}",
