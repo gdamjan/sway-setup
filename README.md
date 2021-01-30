@@ -29,7 +29,9 @@ I'm running sway as a user systemd service, started by sddm (the login manager).
 
 ## Where do environment variables go?
 
-`~/.config/sway/env` variables set for the sway service, but also imported by the systemd --user manager.
+Read `man environment.d`, environment variables set there will be read by the
+--user systemd, and since everything is started in its hierarchy variables will
+properly propagate.
 
 ## Wayland tools
 - https://github.com/gdamjan/swaylock (fork: implements a grace period before a password is required)
